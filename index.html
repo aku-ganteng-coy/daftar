@@ -16,12 +16,11 @@
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 15% 20%, rgba(255, 200, 0, 0.14), transparent 22%),
-        radial-gradient(circle at 85% 18%, rgba(255, 170, 0, 0.12), transparent 24%),
-        radial-gradient(circle at 20% 80%, rgba(255, 120, 0, 0.10), transparent 22%),
-        radial-gradient(circle at 80% 75%, rgba(255, 215, 0, 0.10), transparent 24%),
-        radial-gradient(circle at 50% 50%, rgba(255, 190, 0, 0.08), transparent 30%),
-        linear-gradient(180deg, #060606 0%, #000000 45%, #070707 100%);
+        radial-gradient(circle at 10% 15%, rgba(255, 210, 0, 0.18), transparent 20%),
+        radial-gradient(circle at 90% 20%, rgba(255, 180, 0, 0.14), transparent 22%),
+        radial-gradient(circle at 15% 85%, rgba(255, 150, 0, 0.12), transparent 23%),
+        radial-gradient(circle at 85% 80%, rgba(255, 220, 80, 0.13), transparent 24%),
+        linear-gradient(180deg, #030303 0%, #000 55%, #050505 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -29,38 +28,36 @@
       position: relative;
     }
 
-    /* particle seluruh background */
     body::before {
       content: "";
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle, rgba(255, 215, 0, 0.22) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255, 180, 0, 0.10) 1.5px, transparent 1.5px);
-      background-size: 90px 90px, 140px 140px, 220px 220px;
-      background-position: 0 0, 40px 60px, 100px 120px;
-      animation: particlesMove 28s linear infinite;
-      opacity: 0.45;
+        radial-gradient(circle, rgba(255, 220, 90, 0.9) 1px, transparent 1.7px),
+        radial-gradient(circle, rgba(255, 190, 0, 0.45) 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.28) 0.8px, transparent 1.5px);
+      background-size: 80px 80px, 130px 130px, 190px 190px;
+      background-position: 0 0, 45px 70px, 90px 30px;
+      opacity: 0.38;
+      animation: goldSparkleMove 26s linear infinite;
       pointer-events: none;
     }
 
-    /* vignette biar pinggir tetap dark */
     body::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0.9) 100%);
+        radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.78) 100%);
       pointer-events: none;
     }
 
-    @keyframes particlesMove {
+    @keyframes goldSparkleMove {
       from {
-        background-position: 0 0, 40px 60px, 100px 120px;
+        background-position: 0 0, 45px 70px, 90px 30px;
       }
       to {
-        background-position: 220px 180px, -180px 160px, 140px -120px;
+        background-position: 240px 180px, -160px 230px, 210px -140px;
       }
     }
 
@@ -73,21 +70,22 @@
 
     .top-image {
       display: inline-block;
-      margin-bottom: 35px;
+      margin-bottom: 28px;
     }
 
     .top-image img {
-      width: 300px;
-      max-width: 85%;
+      width: 560px;
+      max-width: 92%;
+      height: auto;
       border-radius: 14px;
       transition: 0.25s ease;
-      filter: drop-shadow(0 0 18px rgba(255, 196, 0, 0.28));
+      filter: drop-shadow(0 0 22px rgba(255, 196, 0, 0.38));
     }
 
     .top-image img:hover {
       transform: scale(1.03);
-      opacity: 0.95;
-      filter: drop-shadow(0 0 26px rgba(255, 196, 0, 0.45));
+      opacity: 0.96;
+      filter: drop-shadow(0 0 30px rgba(255, 196, 0, 0.55));
     }
 
     .button-wrapper {
@@ -95,7 +93,6 @@
       gap: 28px;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .btn {
@@ -109,23 +106,26 @@
       font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.5px;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       transition: all 0.25s ease;
-      box-shadow: 0 0 10px rgba(255, 212, 0, 0.20);
+      box-shadow: 0 0 12px rgba(255, 212, 0, 0.25);
     }
 
     .btn:hover {
       background: #050505;
       color: #ffd400;
       border: 1.5px solid #b99200;
-      box-shadow: 0 0 12px rgba(255, 212, 0, 0.28);
+      box-shadow: 0 0 14px rgba(255, 212, 0, 0.38);
     }
 
     @media (max-width: 600px) {
       .top-image img {
-        width: 235px;
+        width: 330px;
+        max-width: 95%;
       }
 
       .button-wrapper {
@@ -143,6 +143,7 @@
 <body>
 
   <div class="container">
+
     <a href="https://mtwin.link/telor" class="top-image">
       <img src="mpotwin.png" alt="Gambar Link">
     </a>
@@ -151,6 +152,7 @@
       <a href="https://mtwin.link/telor" class="btn">MASUK</a>
       <a href="https://mtwin.link/telor" class="btn">DAFTAR</a>
     </div>
+
   </div>
 
 </body>
